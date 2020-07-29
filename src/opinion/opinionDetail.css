@@ -22,3 +22,9 @@
 .go_back {
     margin-left: 670px;
 }
+.writing_comments {
+    width: 74%;
+}
+.comment {
+    max-width: 66%;
+}
