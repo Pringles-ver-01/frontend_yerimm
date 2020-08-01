@@ -1,8 +1,107 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { Pagenation, Page } from "../items";
+import axios from "axios";
 import './opinionList.css';
 
+export const getOpinionList =  data => ({type: "GET_OPINION_LIST", payload: data})
+
+export const opinionReducer = (state = [], action) => {
+    switch (action.type) {
+        case "GET_OPINION_LIST": return action.payload
+        default: return state
+    }
+}
+
+export const opinionList = () => dispatch => {
+    axios.get(``)
+        .then(response => {
+            console.log(`opinionList reducer THEN`)
+            dispatch(getOpinionList(response.data))
+        })
+        .catch(error => {
+            console.log(`opinionList reducer CATCH`)
+        })
+}
+
+
 const OpinionList = () => {
+    const [titleNumber, setTitleNumber] = useState("1");
+    const [title, setTitle] = useState(
+        "'2+2년 계약갱신·5% 상한' 주택임대차보호법 국회 통과(종합)에 대한 오피니언");
+    const [writer, setWriter] = useState("배고픈 거북이");
+    const [registerDate, setRegisterDate] = useState("20200801");
+    const [hits, setHits] = useState("79")
+    const [arr, setArr] = useState([
+        {
+            titleNumber : titleNumber,
+            title: title,
+            writer: writer,
+            registerDate: registerDate,
+            hits: hits
+        },
+        {
+            titleNumber : titleNumber,
+            title: title,
+            writer: writer,
+            registerDate: registerDate,
+            hits: hits
+        },
+        {
+            titleNumber : titleNumber,
+            title: title,
+            writer: writer,
+            registerDate: registerDate,
+            hits: hits
+        },
+        {
+            titleNumber : titleNumber,
+            title: title,
+            writer: writer,
+            registerDate: registerDate,
+            hits: hits
+        },
+        {
+            titleNumber : titleNumber,
+            title: title,
+            writer: writer,
+            registerDate: registerDate,
+            hits: hits
+        },
+        {
+            titleNumber : titleNumber,
+            title: title,
+            writer: writer,
+            registerDate: registerDate,
+            hits: hits
+        },
+        {
+            titleNumber : titleNumber,
+            title: title,
+            writer: writer,
+            registerDate: registerDate,
+            hits: hits
+        },
+        {
+            titleNumber : titleNumber,
+            title: title,
+            writer: writer,
+            registerDate: registerDate,
+            hits: hits
+        },
+        {
+            titleNumber : titleNumber,
+            title: title,
+            writer: writer,
+            registerDate: registerDate,
+            hits: hits
+        }
+
+    ])
+
+    const linktoDetail = e => {
+        e.preventDefault();
+    }
 
     return <>
         <table>
@@ -20,7 +119,7 @@ const OpinionList = () => {
             <table className="table">
                 <thead>
                 <tr>
-                    <th>게시글 번호</th>
+                    <th>번호</th>
                     <th>제목</th>
                     <th>작성자</th>
                     <th>등록한 날짜</th>
@@ -28,65 +127,19 @@ const OpinionList = () => {
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>RUS</td>
-                    <td><Link to="opinionDetail">Russian Federation</Link></td>
-                    <td>Россия</td>
-                    <td>Moscow</td>
-                    <td>146</td>
-                </tr>
-                <tr>
-                    <td>DEU</td>
-                    <td><Link to="opinionDetail">Germany</Link></td>
-                    <td>Deutschland</td>
-                    <td>Berlin</td>
-                    <td>81</td>
-                </tr>
-                <tr>
-                    <td>FRA</td>
-                    <td><Link to="opinionDetail">France</Link></td>
-                    <td>France</td>
-                    <td>Paris</td>
-                    <td>66</td>
-                </tr>
-                <tr>
-                    <td>GBR</td>
-                    <td><Link to="opinionDetail">United Kingdom of Great Britain</Link></td>
-                    <td>United Kingdom</td>
-                    <td>London</td>
-                    <td>93</td>
-                </tr>
-                <tr>
-                    <td>ITA</td>
-                    <td><Link to="opinionDetail">Italy</Link></td>
-                    <td>Italia</td>
-                    <td>Rome</td>
-                    <td>51</td>
-                </tr>
-                <tr>
-                    <td>ESP</td>
-                    <td><Link to="opinionDetail">Spain</Link></td>
-                    <td>España</td>
-                    <td>Madrid</td>
-                    <td>22</td>
-                </tr>
-                <tr>
-                    <td>UKR</td>
-                    <td><Link to="opinionDetail">Ukraine</Link></td>
-                    <td>Україна</td>
-                    <td>Kiev</td>
-                    <td>42</td>
-                </tr>
-                <tr>
-                    <td>POL</td>
-                    <td><Link to="opinionDetail">Poland</Link></td>
-                    <td>Polska</td>
-                    <td>Warsaw</td>
-                    <td>38</td>
-                </tr>
+                {arr.map((item)=>(
+                    <tr>
+                        <td>{item.titleNumber}</td>
+                        <td><Link to="opinionDetail">{item.title}</Link></td>
+                        <td onClick={linktoDetail}>{item.writer}</td>
+                        <td>{item.registerDate}</td>
+                        <td>{item.hits}</td>
+                    </tr>
+                ))}
                 </tbody>
             </table>
             <div className="page_nation">
+                <Pagenation items={[0,1,2,3,4]} active={1}/>
                 <div className="flex flex-wrap items-center justify-start space-x-2 pagination">
                     <button
                         className="btn btn-default bg-transparent hover:bg-grey-200 text-grey-900 dark:text-white">Previous
