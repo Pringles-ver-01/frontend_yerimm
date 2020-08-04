@@ -10,6 +10,7 @@ import * as serviceWorker from './serviceWorker';
 import { OpinionReducer } from "./opinion/OpinionRegister";
 import {CommentReducer} from "./opinion/OpinionDetail";
 
+
 const rootReducer = combineReducers({
     OpinionReducer, CommentReducer
 });
@@ -25,4 +26,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
+
 serviceWorker.unregister();
+
+
