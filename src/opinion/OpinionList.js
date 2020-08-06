@@ -139,7 +139,6 @@ const OpinionList = () => {
                 </tbody>
             </table>
             <div className="page_nation">
-                <Pagenation items={[0,1,2,3,4]} active={1}/>
                 <div className="flex flex-wrap items-center justify-start space-x-2 pagination">
                     <button
                         className="btn btn-default bg-transparent hover:bg-grey-200 text-grey-900 dark:text-white">Previous
