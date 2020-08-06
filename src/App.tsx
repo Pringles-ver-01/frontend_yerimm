@@ -7,7 +7,7 @@ import './css/_components.css';
 import './css/_palettes.css';
 import './css/main.css';
 import { StockPage } from "./stocks";
-import {TotalBudget, TransactModal} from "./portfolio"
+import {TotalBudget} from "./portfolio"
 
 const App = () => {
   return <>
@@ -17,7 +17,6 @@ const App = () => {
               <Route path="/opinionDetail" component={OpinionDetail}/>
               <Route path="/stockpage" component={StockPage}/>
               <Route path="/portfolio" component={TotalBudget}/>
-              <Route path="/popup" component={TransactModal}/>
           </Switch>
   </>
 }

@@ -42,7 +42,6 @@ const OpinionRegister = () => {
                 .then(response => dispatch(addOpinionAction(response.data)))
                 .catch(error => { throw(error) })
         }
-
         setTitle("")
         setContent("")
         setTags("")
