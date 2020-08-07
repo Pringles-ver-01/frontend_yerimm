@@ -62,8 +62,8 @@ const OpinionRegister = () => {
             </div>
             <input className={"form-input"} onChange={ event => { setTags(event.target.value)} } placeholder={"#키워드 입력"} type="text"/>
             <div className={"buttons"}>
-                <button className="btn btn-default bg-transparent hover:bg-blue-50 text-blue-500 hover:text-blue-600 btn-rounded btn-raised"><Link to="opinionList">취소하기</Link></button>
-            <button className="btn btn-default bg-blue-500 hover:bg-blue-600 text-white btn-rounded"><Link to="opinionList">등록하기</Link></button>
+                <button className="btn btn-default bg-transparent hover:bg-blue-50 text-blue-500 hover:text-blue-600 btn-rounded btn-raised"><Link to="stockList">취소하기</Link></button>
+            <button className="btn btn-default bg-blue-500 hover:bg-blue-600 text-white btn-rounded"><Link to="stockList">등록하기</Link></button>
             </div>
         </form>
     </>

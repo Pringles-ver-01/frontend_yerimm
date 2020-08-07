@@ -80,7 +80,7 @@ const OpinionDetail = () => {
             </table>
         ))}
 
-        <button className="btn btn-default bg-transparent hover:bg-blue-50 text-blue-500 hover:text-blue-600 btn-rounded btn-raised go_back"><Link to="opinionList">돌아가기</Link></button><br/>
+        <button className="btn btn-default bg-transparent hover:bg-blue-50 text-blue-500 hover:text-blue-600 btn-rounded btn-raised go_back"><Link to="stockList">돌아가기</Link></button><br/>
         <div className="comments">
             <input name="name" type="text" className="form-input border-0 bg-grey-100 ml-2 writing_comments"
                    placeholder="댓글을 입력하세요"/>

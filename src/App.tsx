@@ -12,7 +12,7 @@ import {TotalBudget} from "./portfolio"
 const App = () => {
   return <>
           <Switch>
-              <Route path="/opinionList" component={OpinionList}/>
+              <Route path="/stocklist" component={OpinionList}/>
               <Route path="/opinionRegister" component={OpinionRegister}/>
               <Route path="/opinionDetail" component={OpinionDetail}/>
               <Route path="/stockpage" component={StockPage}/>
