@@ -6,14 +6,14 @@ import './css/_components.css';
 import './css/_palettes.css';
 import './css/main.css';
 import { StockPage, StockList } from "./stocks";
-import {TotalBudget} from "./portfolio"
+import PortfolioPage from "./portfolio/PortfolioPage";
 
 const App = () => {
   return <>
           <Switch>
               <Route path="/stocklist" component={StockList}/>
               <Route path="/stockpage" component={StockPage}/>
-              <Route path="/portfolio" component={TotalBudget}/>
+              <Route path="/portfolio" component={PortfolioPage}/>
           </Switch>
   </>
 }

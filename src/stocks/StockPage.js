@@ -1,6 +1,7 @@
 import React from "react";
-import "./underlinedTabs.css";
-import { CandleChart, UnderlinedTabs, StockDetail } from "./index";
+import "../items/underlinedTabs.css";
+import { CandleChart, StockDetail } from "./index";
+import { UnderlinedTabs } from "../items";
 
 const StockPage = () => {
 
