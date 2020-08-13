@@ -5,7 +5,7 @@ const BudgetHistory = () => {
     const [list, setList] = useState([]);
     let transactionDetail = []
 
-    useEffect(() => {
+    /*useEffect(() => {
         transactionDetail = []
         axios.get(`http://localhost:8080/`)
             .then(({response}) => {
@@ -18,7 +18,7 @@ const BudgetHistory = () => {
                 console.log(`BudgetHistory useEffect err`)
                 throw error
             })
-    }, [transactionDetail])
+    }, [transactionDetail])*/
 
 
     return <>

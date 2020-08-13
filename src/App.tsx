@@ -6,7 +6,7 @@ import './css/_components.css';
 import './css/_palettes.css';
 import './css/main.css';
 import { StockPage, StockList } from "./stocks";
-import PortfolioPage from "./portfolio/PortfolioPage";
+import PortfolioPage from "./asset/PortfolioPage";
 
 const App = () => {
   return <>

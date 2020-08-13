@@ -8,7 +8,7 @@ const HoldingShares = () => {
 
     let holdingShares = []
 
-    useEffect(() => {
+    /*useEffect(() => {
         holdingShares = []
         axios.get(`http://localhost:8080/`)
             .then((response)=>{
@@ -29,7 +29,7 @@ const HoldingShares = () => {
                 console.log(`HoldingShares python useEffect then`)
                 //response.data.nowPrice
             })
-    })
+    })*/
 
     return <>
         <table>

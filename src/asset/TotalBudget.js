@@ -1,24 +1,29 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import axios from "axios";
-import {element} from "prop-types";
 
 const TotalBudget = () => {
-    let budgetDetail = []
+    const [asset, setAsset] = useState({
+            "assetId": 0,
+            "totalAsset": 0,
+            "transactionDate": null,
+            "priceEarnigsRatio": 0,
+            "profitLoss": 0,
+            "shareCount": 0,
+            "transactionType": false
+        })
+
 
     useEffect(() => {
-        budgetDetail = []
-        axios.get(`http://localhost:8080/`)
+        axios.get(`http://localhost:8080/assets/test`)
             .then((response) => {
-                console.log(`TotalBudget useEffect then`)
-                response.data.map(element => {
-                    budgetDetail.push(element)
-                })
+                setAsset(response.data)
             })
             .catch((error) => {
                 console.log(`TotalBudget useEffect catch`)
                 throw error
             })
-    }, [budgetDetail])
+    },[])
+
 
     return <>
         <table className="stock_table">
@@ -31,13 +36,13 @@ const TotalBudget = () => {
                                 <tr>
                                     <td>
                                         <span className="text-base font-bold">내 자산 총액</span> <br/>
-                                        <span className="text-2xl font-bold" style={{"margin" : "auto"}}>{budgetDetail} 원</span>
+                                        <span className="text-2xl font-bold" style={{"margin" : "auto"}}>{asset.assetId}원</span>
                                     </td>
                                     <td>
                                         <span className="text-base">평가 수익률</span>
-                                        <span className="text-lg font-bold">{budgetDetail} %</span> <br/>
+                                        <span className="text-lg font-bold">{asset.priceEarnigsRatio}%</span> <br/>
                                         <span className="text-base" style={{"margin-right":"12px"}}>평가 손익</span>
-                                        <span className="text-lg font-bold">{budgetDetail} 원</span>
+                                        <span className="text-lg font-bold">{asset.profitLoss}원</span>
                                     </td>
                                 </tr>
                             </div>
